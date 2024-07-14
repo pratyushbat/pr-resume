@@ -34,10 +34,12 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+               "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/magenta-violet.css",
+              "src/theme.scss",
               "src/styles.css"
             ],
             "scripts": []
@@ -93,11 +95,14 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+               "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/magenta-violet.css",
-              "src/styles.css"
+              "src/theme.scss",
+              "src/styles.css",
+              "customTheme.scss"
             ],
             "scripts": []
           }

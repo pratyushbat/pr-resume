@@ -1,0 +1,114 @@
+@use '@angular/material' as mat;
+@import '../node_modules/@angular/material/core/theming/theming';
+@include mat.core();
+$my-theme: mat.define-theme((
+ color: (
+    theme-type: light,
+    primary: mat.$violet-palette,
+  ),
+));
+
+html {
+  @include mat.all-component-themes($my-theme);
+}
+@mixin linearGradient($top, $bottom) {
+  background: $top; /* Old browsers */
+  background: -moz-linear-gradient(top, $top 0%, $bottom 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $top), color-stop(100%, $bottom)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, $top 0%, $bottom 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, $top 0%, $bottom 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, $top 0%, $bottom 100%); /* IE10+ */
+  background: linear-gradient(to bottom, $top 0%, $bottom 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0); /* IE6-9 */
+}
+
+.mat-card{
+  @include linearGradient(#ffffff, #f2f2f2);
+}
+// $mmb-primary: (
+//   50 : #ebfbf2,
+//   100 : #cef4df,
+//   200 : #aeedca,
+//   300 : #8de6b5,
+//   400 : #74e0a5,
+//   500 : #5cdb95,
+//   600 : #54d78d,
+//   700 : #4ad282,
+//   800 : #41cd78,
+//   900 : #30c467,
+//   A100 : #ffffff,
+//   A200 : #d5ffe4,
+//   A400 : #a2ffc3,
+//   A700 : #89ffb2,
+//   contrast: (
+//     50 : #000000,
+//     100 : #000000,
+//     200 : #000000,
+//     300 : #000000,
+//     400 : #000000,
+//     500 : #000000,
+//     600 : #000000,
+//     700 : #000000,
+//     800 : #000000,
+//     900 : #ffffff,
+//     A100 : #000000,
+//     A200 : #000000,
+//     A400 : #000000,
+//     A700 : #000000,
+//   )
+// );
+
+// $mmb-accent: (
+//   50 : #eaf1f8,
+//   100 : #cbdded,
+//   200 : #a9c7e1,
+//   300 : #87b0d5,
+//   400 : #6d9fcc,
+//   500 : #538ec3,
+//   600 : #4c86bd,
+//   700 : #427bb5,
+//   800 : #3971ae,
+//   900 : #295fa1,
+//   A100 : #e2eeff,
+//   A200 : #afd1ff,
+//   A400 : #7cb4ff,
+//   A700 : #63a5ff,
+//   contrast: (
+//     50 : #000000,
+//     100 : #000000,
+//     200 : #000000,
+//     300 : #000000,
+//     400 : #000000,
+//     500 : #000000,
+//     600 : #000000,
+//     700 : #000000,
+//     800 : #000000,
+//     900 : #000000,
+//     A100 : #000000,
+//     A200 : #000000,
+//     A400 : #000000,
+//     A700 : #000000,
+//   )
+// );
+
+// $mmb-palette-primary: mat-palette($mmb-primary);
+// $mmb-palette-accent: mat-palette($mmb-accent);
+
+// $mmb-app-theme: mat-light-theme($mmb-palette-primary, $mmb-palette-accent);
+// @include mat.angular-material-theme($mmb-app-theme);
+
+
+// // @mixin linearGradient($top, $bottom) {
+// //   background: $top; /* Old browsers */
+// //   background: -moz-linear-gradient(top, $top 0%, $bottom 100%); /* FF3.6+ */
+// //   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $top), color-stop(100%, $bottom)); /* Chrome,Safari4+ */
+// //   background: -webkit-linear-gradient(top, $top 0%, $bottom 100%); /* Chrome10+,Safari5.1+ */
+// //   background: -o-linear-gradient(top, $top 0%, $bottom 100%); /* Opera 11.10+ */
+// //   background: -ms-linear-gradient(top, $top 0%, $bottom 100%); /* IE10+ */
+// //   background: linear-gradient(to bottom, $top 0%, $bottom 100%); /* W3C */
+// //   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0); /* IE6-9 */
+// // }
+
+// .mat-card{
+//   @include linearGradient(#ffffff, #f2f2f2);
+// }

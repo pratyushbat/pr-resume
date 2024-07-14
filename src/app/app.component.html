@@ -1,98 +1,28 @@
-<style>
+<form [formGroup]="loginForm" class="overlay" fxLayoutAlign="center center" fxLayout="column" fxLayoutGap="40px" (ngSubmit)="loginForm.valid && login()">
+  <!-- <div  > -->
 
-</style>
 
-<main class="main">
-  <div class="content">
-    <mat-toolbar style="background-color: #8760c5;">
-
-      <span href="  https://tburleson-layouts-demos.firebaseapp.com/#/docs">Custom Toolbar</span>
-      <button mat-button color="accent">Normal</button>
-      <button mat-raised-button color="primary">Raised</button>
-      <button disableRipple mat-stroked-button color="warn">Raised</button>
-    </mat-toolbar>
-    <div class="container">
-      <div class="flex-item"><span>one</span></div>
-      <div class="flex-item"><span>two</span></div>
-      <div class="flex-item"><span>three</span></div>
-    </div>
-    <!-- <div style="    height: 194px;
-    display: flex;
-    flex-direction: column;
-    /* flex-wrap: wrap; */
-    /* flex-flow: wrap; */
-    justify-content: space-between;
-    align-items: stretch;">
-      <div style="display: flex;flex-direction: row; background-color: #a781e3;">
-        <div>text1</div>
-        <div>
-          <p>subtext</p>
-          <p>paragraph</p>
-        </div>
-      </div>
-      <div style="background-color: #311261;">
-        <p>hello</p>
-      </div>
-      <div style="background-color: #1fab26;">
-        <p>hello</p>
-      </div>
-    </div> -->
-    <!-- <div style="background-color: #a781e3; width: 55vw;margin:15px">
-      <mat-form-field class="example-full-width">
-        <mat-label>Email</mat-label>
-        <input type="email" matInput placeholder="Ex. pat@example.com">
-      </mat-form-field>
-    </div> -->
-    <!-- <div style="background-color: #a781e3; width: 55vw;margin:15px">
-      <mat-form-field class="example-full-width">
-        <mat-label>Email</mat-label>
-        <textarea type="email" matInput placeholder="Ex. pat@example.com"></textarea>
-      </mat-form-field>
-    </div> -->
-    <!-- fxLayoutAlign default is center center x,y axis =center center -->
-    <mat-card fxLayoutAlign="center center" fxLayout="column" appearance="raised" style="width:50vw;margin-left: 2%;margin-top: 2%; background-color: whitesmoke;">
-    <div fxLayout="row" fxLayoutGap="20px">
-      <mat-form-field fxFlex="60%" class="example-full-width">
-        <mat-label>First name</mat-label>
-        <input type="first email" matInput placeholder="Ex. pat@example.com">
-      </mat-form-field>
-      <mat-form-field fxFlex="40%" class="example-full-width">
-        <mat-label>Last name</mat-label>
-        <input type="last name" matInput placeholder="Ex. pat@example.com">
-      </mat-form-field>
-    </div>
-    <mat-form-field class="example-full-width">
+  <img width="25%" src="assets/digiresume-green.png" />
+  <mat-card fxLayout="column" appearance="raised"  >
+    <h2 >Login</h2>
+    <mat-form-field style="margin-top:0.5rem">
       <mat-label>Email</mat-label>
-      <input type="email" matInput placeholder="Ex. pat@example.com">
+      <input  formControlName="email" type="email" matInput placeholder="Email" />
+      <mat-error>Valid Email is required</mat-error>
     </mat-form-field>
-    </mat-card>
-    <!-- <mat-card appearance="outlined" style="width:30vw;margin-left: 2%;margin-top: 2%; background-color: whitesmoke;">
-      <mat-form-field class="example-full-width">
-        <mat-label>Email</mat-label>
-        <textarea type="email" matInput placeholder="Ex. pat@example.com"></textarea>
-      </mat-form-field>
-    </mat-card> -->
-    <!-- <mat-card
-      style="margin-left: 2%;margin-top: 2%; background-color: whitesmoke;display: flex; justify-content: start; flex-direction: column; flex-wrap: wrap;">
-      <mat-card-header>
-        <mat-card-title>title</mat-card-title>
-        <mat-card-subtitle>subtitle</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        <mat-form-field class="example-full-width">
-          <mat-label>Email</mat-label>
-          <textarea type="email" matInput placeholder="Ex. pat@example.com"></textarea>
-        </mat-form-field>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>Ok</button>
-      </mat-card-actions>
-    </mat-card> -->
+    <mat-form-field style="margin-top:0.5rem" >
+      <mat-label>Password</mat-label>
+      <input formControlName="password" type="password" matInput placeholder="Password" />
+      <mat-error>(8-12 digit)Password is required</mat-error>
+    </mat-form-field>
+    <a style="margin-top:2rem" style="margin-top:2rem">Forgot password</a>
+    <div fxLayout ="row" fxLayoutGap="20px" fxLayoutAlign="end">
+      <button type="submit" class="primary" color="primary" mat-raised-button >Login</button>
+      <button (click)="signup()" class="accent" color="accent"  mat-raised-button>Sign up</button>
+    </div>
+  </mat-card>
 
-
+<!-- </div> -->
+</form>
     
-  </div>
-</main>
-
-
 <router-outlet />

@@ -2,3 +2,18 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+::ng-deep mat-snack-bar-container > .alert-success {
+   background-color: #dff0d8 !important; 
+   border-color:#d0e9c6 !important;
+   color:#3c763d !important;
+}
+::ng-deep mat-snack-bar-container.alert-error{
+    background-color: #f2dede !important; 
+    border-color:#ebcccc !important;
+    color:#a94442 !important;
+}
+
+::ng-deep mat-snack-bar-container.alert .mat-simple-snackbar{
+ justify-content: center !important;
+}
