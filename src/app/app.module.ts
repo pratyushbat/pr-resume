@@ -11,9 +11,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpService } from './services/http.service';
 import { ApiService } from './services/api.service';
 import { AlertService } from './services/alert.service';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { LoginComponent } from './container/login.component';
+import { SignupComponent } from './container/signup.component';
+import { ForgotPasswordComponent } from './container/forgot-password.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    SignupComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -22,6 +29,7 @@ import { AlertService } from './services/alert.service';
     FlexLayoutModule ,
     ReactiveFormsModule,
     HttpClientModule,
+    MatProgressSpinnerModule
     
 
   ],

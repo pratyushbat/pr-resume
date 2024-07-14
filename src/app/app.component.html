@@ -1,28 +1,2 @@
-<form [formGroup]="loginForm" class="overlay" fxLayoutAlign="center center" fxLayout="column" fxLayoutGap="40px" (ngSubmit)="loginForm.valid && login()">
-  <!-- <div  > -->
 
-
-  <img width="25%" src="assets/digiresume-green.png" />
-  <mat-card fxLayout="column" appearance="raised"  >
-    <h2 >Login</h2>
-    <mat-form-field style="margin-top:0.5rem">
-      <mat-label>Email</mat-label>
-      <input  formControlName="email" type="email" matInput placeholder="Email" />
-      <mat-error>Valid Email is required</mat-error>
-    </mat-form-field>
-    <mat-form-field style="margin-top:0.5rem" >
-      <mat-label>Password</mat-label>
-      <input formControlName="password" type="password" matInput placeholder="Password" />
-      <mat-error>(8-12 digit)Password is required</mat-error>
-    </mat-form-field>
-    <a style="margin-top:2rem" style="margin-top:2rem">Forgot password</a>
-    <div fxLayout ="row" fxLayoutGap="20px" fxLayoutAlign="end">
-      <button type="submit" class="primary" color="primary" mat-raised-button >Login</button>
-      <button (click)="signup()" class="accent" color="accent"  mat-raised-button>Sign up</button>
-    </div>
-  </mat-card>
-
-<!-- </div> -->
-</form>
-    
 <router-outlet />

@@ -6,7 +6,7 @@ import { AlertService } from './alert.service';
 
 @Injectable()
 export class HttpService {
-  private baseUrl = 'https://dummyjson.com';
+  private baseUrl = 'http://localhost:5000/api';
   AUTH_TOKEN = 'auth_token';
 
   constructor(private httpClient: HttpClient, private alertService: AlertService) {
@@ -58,4 +58,5 @@ export class HttpService {
   private getPreAuthHeader(): { [header: string]: string | string[]; } {
     return { 'Content-Type': 'application/json' }
   }
+  
 }
