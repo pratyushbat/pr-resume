@@ -35,12 +35,13 @@
                 "glob": "**/*",
                 "input": "public"
               },
-               "src/favicon.ico",
+              "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
               "src/theme.scss",
-              "src/styles.css"
+              "src/styles.css",
+              "src/responsive-styles.css"
             ],
             "scripts": []
           },
@@ -96,12 +97,13 @@
                 "glob": "**/*",
                 "input": "public"
               },
-               "src/favicon.ico",
+              "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
               "src/theme.scss",
               "src/styles.css",
+              "src/responsive-styles.css",
               "customTheme.scss"
             ],
             "scripts": []

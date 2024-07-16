@@ -15,12 +15,17 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { LoginComponent } from './container/login.component';
 import { SignupComponent } from './container/signup.component';
 import { ForgotPasswordComponent } from './container/forgot-password.component';
+import { AuthRepository } from './repository/repository/auth-repository';
+import { VerificationComponent } from './container/verification.component';
+import { AuthGuard } from './auth-guards/auth-guard.component';
+import { AnonGuard } from './auth-guards/anon-guard.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    VerificationComponent
   ],
   imports: [
     BrowserModule,
@@ -37,8 +42,10 @@ import { ForgotPasswordComponent } from './container/forgot-password.component';
     provideAnimationsAsync(),
     HttpService,
     ApiService,
-    AlertService
-    
+    AlertService,
+    AuthRepository,
+    AuthGuard,
+    AnonGuard
     
   ],
   bootstrap: [AppComponent]

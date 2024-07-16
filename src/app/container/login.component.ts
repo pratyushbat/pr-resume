@@ -70,13 +70,13 @@ export class LoginComponent implements OnInit {
 
     login() {
         this.loading = true;
-        const login$ = this.apiService.loginUser(this.loginForm.value);
+        const login$ = this.apiService.loginAndSetToken(this.loginForm.value);
         login$.subscribe((data: UserRes) => {
             this.loading = false;
             this.user = data.user;
             console.log(data);
             this.alertService.success('Login Successful');
-            this.router.navigate(['dashboard'])
+            this.router.navigate(['verify'])
         }, error => {
             this.loading = false;
             console.log(error)

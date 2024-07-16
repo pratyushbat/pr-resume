@@ -1,0 +1,42 @@
+@media screen and (max-width: 599px) {
+    .res-h1{
+        text-align: center;
+    }
+
+    .res-verification-card {
+      max-width: 70% !important;
+      font-size: 80% !important;
+    }
+
+    .res-onboarding-title {
+      text-align: center !important;
+      font-size: 2rem !important;
+    }
+  
+    .res-header-image {
+      width: 45% !important;
+      margin-left: -1rem !important;
+    }
+  
+    .mat-menu-panel {
+      background: #1d1c1bc2 !important;
+    }
+  
+    .res-onboarding-desc {
+      text-align: center !important;
+      font-size: 1rem !important;
+    }
+  
+    .res-expansion-title {
+      margin-bottom: 2rem !important;
+    }
+  
+    .res-setting-container {
+      padding: 2rem !important;
+    }
+  
+    .res-mat-expansion-panel-header {
+      padding: 5px !important;
+    }
+  }
+  

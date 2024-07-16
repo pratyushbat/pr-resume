@@ -17,3 +17,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 ::ng-deep mat-snack-bar-container.alert .mat-simple-snackbar{
  justify-content: center !important;
 }
+
+
+.overlay{
+    width: 100%;
+    height: 100%;
+}
