@@ -115,7 +115,7 @@ export class ForgotPasswordComponent {
 
 
   login() {
-    this.router.navigate(['login'])
+    this.router.navigate([''])
   }
 
 

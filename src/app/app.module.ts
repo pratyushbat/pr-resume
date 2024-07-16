@@ -19,13 +19,19 @@ import { AuthRepository } from './repository/repository/auth-repository';
 import { VerificationComponent } from './container/verification.component';
 import { AuthGuard } from './auth-guards/auth-guard.component';
 import { AnonGuard } from './auth-guards/anon-guard.component';
+import { OnBoardingComponent } from './container/onboarding.component';
+import { VerificationComplete } from './auth-guards/verification-completed';
+import { VerificationInComplete } from './auth-guards/verification-incompleted';
+import { OnBoardingIncomplete } from './auth-guards/onboarding-in-complete';
+import { OnBoardingComplete } from './auth-guards/onboarding-complete';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
     ForgotPasswordComponent,
-    VerificationComponent
+    VerificationComponent,
+    OnBoardingComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +51,11 @@ import { AnonGuard } from './auth-guards/anon-guard.component';
     AlertService,
     AuthRepository,
     AuthGuard,
-    AnonGuard
+    AnonGuard,
+    VerificationComplete,
+    VerificationInComplete,
+    OnBoardingIncomplete,
+    OnBoardingComplete
     
   ],
   bootstrap: [AppComponent]

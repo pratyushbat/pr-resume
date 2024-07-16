@@ -64,7 +64,7 @@ export class VerificationComponent implements OnInit {
         this.fetchEmail();
     }
     ngOnInit(): void {
-        throw new Error('Method not implemented.');
+
     }
 
     fetchEmail() {
