@@ -12,6 +12,10 @@ import { VerificationInComplete } from './auth-guards/verification-incompleted';
 import { OnBoardingIncomplete } from './auth-guards/onboarding-in-complete';
 import { OnBoardingComplete } from './auth-guards/onboarding-complete';
 import { VerificationComplete } from './auth-guards/verification-completed';
+import { OnBoardingIntroComponent } from './container/on-boarding-intro.component';
+import { SecondaryComponent } from './container/secondary.component';
+import { LogoutComponent } from './components/logout.component';
+import { DemoComponent } from './container/on-boarding/demo.component';
 
 const routes: Routes = [
   // {path:'login',component:LoginComponent,canActivate:[AnonGuard]},
@@ -28,12 +32,28 @@ const routes: Routes = [
     ]
   },
   {
+    path: '', canActivate: [AuthGuard,VerificationInComplete], children: [
+      { path: 'verify', component: VerificationComponent  },
+    ]  
+  },
+  {
     path: '', canActivate: [AuthGuard], children: [
-      { path: 'verify', canActivateChild:[], component: VerificationComponent ,canActivate:[VerificationInComplete] },
-      { path: 'on-boarding', component: OnBoardingComponent ,canActivate:[VerificationComplete,OnBoardingIncomplete]},
-      { path: 'dashboard', component: DashboardComponent,canActivate:[VerificationComplete,OnBoardingComplete] },
-    ]
-  }
+      { path: 'logout', component: LogoutComponent  },
+    ]  
+  },
+  {
+    path: '', canActivate:[AuthGuard,VerificationComplete,OnBoardingIncomplete] ,children: [
+      { path: 'on-boarding', component: OnBoardingIntroComponent } ,   
+      { path: 'on-boarding/add', component: OnBoardingComponent } ,   
+    ]  
+  },
+  {
+    path: '',canActivate:[AuthGuard ,VerificationComplete,OnBoardingComplete], children: [    
+      { path: 'dashboard', component: DashboardComponent },
+    ]  
+  },
+  {path:'demo',component:DemoComponent},
+  {path:'chat',component:SecondaryComponent,outlet:'chat-r'}
 ];
 
 @NgModule({

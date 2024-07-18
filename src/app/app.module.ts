@@ -24,6 +24,17 @@ import { VerificationComplete } from './auth-guards/verification-completed';
 import { VerificationInComplete } from './auth-guards/verification-incompleted';
 import { OnBoardingIncomplete } from './auth-guards/onboarding-in-complete';
 import { OnBoardingComplete } from './auth-guards/onboarding-complete';
+import { OnBoardingIntroComponent } from './container/on-boarding-intro.component';
+import { ResumeRepository } from './repository/repository/resume-repository';
+import { ResumeNameComponent } from './container/on-boarding/resume-name.component';
+import { UploadComponent } from './container/on-boarding/tabs/upload.componet';
+import { UploadImageComponent } from './container/on-boarding/tabs/upload-image.component';
+import { UploadFromDiskComponent } from './container/on-boarding/tabs/upload-from-disk.component';
+import { ImportYoutubeComponent } from './container/on-boarding/tabs/import-youtube.component';
+import { SecondaryComponent } from './container/secondary.component';
+import { LogoutComponent } from './components/logout.component';
+import { HeaderComponent } from './container/layout/header.component';
+import { DemoComponent } from './container/on-boarding/demo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +42,17 @@ import { OnBoardingComplete } from './auth-guards/onboarding-complete';
     SignupComponent,
     ForgotPasswordComponent,
     VerificationComponent,
-    OnBoardingComponent
+    OnBoardingComponent,
+    OnBoardingIntroComponent,
+    ResumeNameComponent,
+    UploadComponent,
+    UploadImageComponent,
+    UploadFromDiskComponent,
+    ImportYoutubeComponent,
+    SecondaryComponent,
+    LogoutComponent,
+    HeaderComponent,
+    DemoComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +76,8 @@ import { OnBoardingComplete } from './auth-guards/onboarding-complete';
     VerificationComplete,
     VerificationInComplete,
     OnBoardingIncomplete,
-    OnBoardingComplete
+    OnBoardingComplete,
+    ResumeRepository
     
   ],
   bootstrap: [AppComponent]

@@ -25,7 +25,6 @@ const data = [
   MatProgressSpinnerModule,
   MatIconModule,
   MatStepperModule,
-  MatTabsModule,
   MatExpansionModule,
   MatDialogModule,
   MatSelectModule,
@@ -34,8 +33,8 @@ const data = [
   MatTooltipModule,
   MatRippleModule,
   MatProgressBarModule,
-  MatSnackBarModule
-
+  MatSnackBarModule,
+  MatTabsModule
 ]
 @NgModule({
   declarations: [],
