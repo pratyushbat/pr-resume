@@ -1,0 +1,14 @@
+{
+  "routes": [
+    "/",
+    "/chat",
+    "/dashboard",
+    "/demo",
+    "/forgot-password",
+    "/logout",
+    "/on-boarding",
+    "/on-boarding/add",
+    "/signup",
+    "/verify"
+  ]
+}
