@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -35,6 +35,7 @@ import { SecondaryComponent } from './container/secondary.component';
 import { LogoutComponent } from './components/logout.component';
 import { HeaderComponent } from './container/layout/header.component';
 import { DemoComponent } from './container/on-boarding/demo.component';
+import {FlexLayoutServerModule} from '@angular/flex-layout/server';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,13 +56,14 @@ import { DemoComponent } from './container/on-boarding/demo.component';
     DemoComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     MaterialModule  ,
     FlexLayoutModule ,
     ReactiveFormsModule,
     HttpClientModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    FlexLayoutServerModule
     
 
   ],
@@ -77,7 +79,8 @@ import { DemoComponent } from './container/on-boarding/demo.component';
     VerificationInComplete,
     OnBoardingIncomplete,
     OnBoardingComplete,
-    ResumeRepository
+    ResumeRepository,
+    provideClientHydration()
     
   ],
   bootstrap: [AppComponent]

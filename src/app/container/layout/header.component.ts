@@ -1,6 +1,6 @@
 import {Component, OnDestroy} from '@angular/core';
 
-import {takeWhile} from 'rxjs/operators';
+import {take, takeWhile} from 'rxjs/operators';
 import {Router} from '@angular/router';
 import { AuthRepository } from '../../repository/repository/auth-repository';
 
@@ -88,6 +88,7 @@ export class HeaderComponent implements OnDestroy {
   isAlive = true;
 
   constructor(private authRepo: AuthRepository, private router: Router) {
+    // ,take(1)
     this.authRepo.fetchMe().pipe(takeWhile(() => this.isAlive)).subscribe(user => {
       this.userName = user.name;
     });

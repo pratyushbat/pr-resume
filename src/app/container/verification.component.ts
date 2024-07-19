@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { map } from 'rxjs';
+import { map, take, takeWhile } from 'rxjs';
 import { ApiService } from '../services/api.service';
+import { AuthRepository } from '../repository/repository/auth-repository';
 
 @Component({
-    selector: 'app-name',
-    template: `
+  selector: 'app-name',
+  template: `
 <div class ="overlay">
 
 
@@ -23,7 +24,7 @@ import { ApiService } from '../services/api.service';
     </div>
     </div>
     `,
-    styles: [`
+  styles: [`
    
          mat-icon {
       font-size: 6rem !important;
@@ -57,25 +58,27 @@ import { ApiService } from '../services/api.service';
     }
         `]
 })
-export class VerificationComponent implements OnInit {
-    email = '';
+export class VerificationComponent implements OnInit{
+  email='';
+  constructor(private activatedRoute: ActivatedRoute, private authRepo: AuthRepository) {
+    this.fetchEmail();
+  }
+  ngOnInit(): void {
 
-    constructor(private activatedRoute: ActivatedRoute,private apiService:ApiService) {
-        this.fetchEmail();
-    }
-    ngOnInit(): void {
+  }
 
-    }
+  fetchEmail() {
+    const email$ = this.activatedRoute.queryParams.pipe(map((data: any) => data.email));
+    email$.subscribe(data => {
+      this.email = data;
+    });
 
-    fetchEmail() {
-        const email$ = this.activatedRoute.queryParams.pipe(map((data: any) => data.email));
-        email$.subscribe(data => {
-            this.email = data;
-        });
-
-        this.apiService.fetchMe().subscribe((data)=>{
-            console.log(data);
-             this.email = data.email;
-        })
-    }
+    // this.apiService.fetchMe().subscribe((data)=>{
+    //     console.log(data);
+    //      this.email = data.email;
+    // })
+    // this.authRepo.fetchMe().pipe(takeWhile(() => this.isAlive)).subscribe(user => {
+    //   this.userName = user.name;
+    // });
+  }
 }
