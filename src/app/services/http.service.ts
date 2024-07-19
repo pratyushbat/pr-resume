@@ -5,10 +5,11 @@ import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { AlertService } from './alert.service';
 import { AuthUtils } from '../utility/auth-utils';
 import { isPlatformBrowser } from '@angular/common';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class HttpService {
-  private baseUrl = 'http://localhost:5000/api';
+  private baseUrl = environment.apiKey;
   AUTH_TOKEN = 'auth_token';
 
   constructor(private httpClient: HttpClient, private alertService: AlertService, @Inject(PLATFORM_ID) private platformId: any) {
